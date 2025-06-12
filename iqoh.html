@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untuk Iqoh yang Terluka</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      color: #f2f2f2;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .heart-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .heart {
+      width: 60px;
+      height: 60px;
+      background-color: #f94144;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: pulse 1.2s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 60px;
+      height: 60px;
+      background-color: #f94144;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -30px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 30px;
+      top: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-45deg);
+      }
+    }
+
+    .patpat {
+      display: flex;
+      gap: 20px;
+      z-index: 2;
+    }
+
+    .choice-btn {
+      padding: 10px 25px;
+      font-size: 1rem;
+      background-color: #f94144;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .choice-btn:hover {
+      background-color: #c73033;
+    }
+
+    .big-heart {
+      width: 200px;
+      height: 200px;
+      background-color: #f94144;
+      position: relative;
+      margin: 0 auto;
+      transform: rotate(-45deg);
+      animation: pulse 1.2s infinite;
+    }
+
+    .big-heart::before,
+    .big-heart::after {
+      content: '';
+      width: 200px;
+      height: 200px;
+      background-color: #f94144;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .big-heart::before {
+      top: -100px;
+      left: 0;
+    }
+
+    .big-heart::after {
+      left: 100px;
+      top: 0;
+    }
+
+    .result-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .result-text {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 30px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart-container">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+
+  <div class="patpat" id="patpatBtns">
+    <button class="choice-btn" id="yesBtn" onclick="showResult()">Mau di pat pat</button>
+    <button class="choice-btn" id="noBtn" onmouseover="evadeButton(this)">Nggak</button>
+  </div>
+
+  <div id="ending" style="display: none">
+    <div class="result-section">
+      <div class="result-text">Ututuutu bocah kecil 🤗❤️</div>
+      
+    </div>
+    <br>
+  </div>
+
+
+  <script>
+    function evadeButton(btn) {
+      btn.style.position = 'absolute';
+      btn.style.left = `${Math.random() * (window.innerWidth - 120)}px`;
+      btn.style.top = `${Math.random() * (window.innerHeight - 100)}px`;
+    }
+
+    function showResult() {
+      document.getElementById('patpatBtns').style.display = 'none';
+      document.getElementById('ending').style.display = 'flex';
+      document.getElementById('ending').style.flexDirection = 'column';
+      document.getElementById('ending').style.alignItems = 'center';
+      document.getElementById('ending').style.justifyContent = 'center';
+    }
+  </script>
+</body>
+</html>

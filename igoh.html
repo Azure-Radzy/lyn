@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untuk Iqoh yang Terluka</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap');
+
+   body {
+  margin: 0;
+  padding: 20px 0;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: #f2f2f2;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+    .content {
+      text-align: center;
+      max-width: 700px;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      border-left: 5px solid #f94144;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+
+    .content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #f94144;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .next-btn {
+      margin-top: 30px;
+      padding: 10px 25px;
+      font-size: 1rem;
+      background-color: #f94144;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background-color: #c73033;
+    }
+
+    .heart {
+      width: 80px;
+      height: 80px;
+      background-color: #f94144;
+      position: relative;
+      transform: rotate(-45deg);
+      animation: pulse 1.2s infinite;
+      margin-bottom: 30px;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      width: 80px;
+      height: 80px;
+      background-color: #f94144;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -40px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 40px;
+      top: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-45deg);
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    @media (max-width: 600px) {
+  .content {
+    padding: 20px;
+    border-left: 3px solid #f94144;
+    margin: 0 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .next-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+ .heart-container {
+  animation: pulse 1.2s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.heart {
+  width: 80px;
+  height: 80px;
+  background-color: #f94144;
+  position: relative;
+  transform: rotate(-45deg);
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 80px;
+  height: 80px;
+  background-color: #f94144;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -40px;
+  left: 0;
+}
+
+.heart::after {
+  left: 40px;
+  top: 0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+  
+  footer {
+    font-size: 0.75rem;
+    padding: 10px;
+  }
+}
+
+  </style>
+</head>
+<body>
+<div class="heart-container">
+  <div class="heart"></div>
+</div>
+  <div id="content" class="content">
+    <h1></h1>
+    <p></p>
+    <button class="next-btn" onclick="nextMessage()">Next</button>
+  </div>
+
+  <footer>
+    &copy; 2025 - Isi Hati yang Jelas dan Pedas.
+  </footer>
+
+  <script>
+  const messages = [
+    {
+      title: "Iqoh...",
+      text: "Kamu perempuan yang tulus, bahkan setelah dia menjauh, kamu masih berharap. Tapi pertanyaannya sekarang, siapa yang sedang kamu perjuangkan? Dia, atau kenangan tentang dia?"
+    },
+    {
+      title: "Jangan salahkan dirimu sendiri",
+      text: "Kamu bukan salah karena masih sayang. Tapi jangan biarkan rasa itu bikin kamu terus bertahan di tempat yang tidak dipilih."
+    },
+    {
+      title: "Dia bilang takut dosa, tapi meninggalkanmu tanpa kepastian",
+      text: "Kalau benar takut Tuhan, dia harusnya juga takut bikin kamu merasa tak dihargai. Jangan tertipu sikap sok alim tapi tak bertanggung jawab."
+    },
+    {
+      title: "Jangan kamu yang terus minta dimengerti",
+      text: "Kamu juga butuh seseorang yang hadir, bukan hanya yang pintar menghilang tapi bilang sedang menata hati."
+    },
+    {
+      title: "Berhenti menyalahkan hatimu",
+      text: "Kadang yang harus kita lepaskan bukan cuma orangnya, tapi harapan-harapan yang sudah lama tak dihargai."
+    },
+    {
+      title: "Iqoh, kamu pantas untuk dicintai dengan utuh",
+      text: "Jangan kejar dia yang hanya bicara surga tapi meninggalkanmu sendirian di neraka ketidakpastian."
+    }
+  ];
+
+  let index = 0;
+  const contentBox = document.getElementById('content');
+  const titleEl = contentBox.querySelector('h1');
+  const textEl = contentBox.querySelector('p');
+  const btn = contentBox.querySelector('.next-btn');
+
+  function showMessage(i) {
+    const msg = messages[i];
+    titleEl.textContent = msg.title;
+    textEl.textContent = msg.text;
+    contentBox.classList.add('visible');
+  }
+
+  function nextMessage() {
+    contentBox.classList.remove('visible');
+    setTimeout(() => {
+      index++;
+      if (index < messages.length) {
+        showMessage(index);
+        btn.textContent = "Next";
+        btn.onclick = nextMessage;
+      } else {
+        btn.textContent = "Pat Pat ❤️";
+        btn.onclick = () => {
+          window.location.href = "iqoh.html";
+        };
+        contentBox.classList.add('visible');
+      }
+    }, 500);
+  }
+
+  // ✅ Tambahkan ini agar konten pertama langsung tampil saat halaman dimuat
+  window.onload = () => {
+    showMessage(index);
+    btn.onclick = nextMessage;
+  };
+</script>
+
+
+</body>
+</html>
